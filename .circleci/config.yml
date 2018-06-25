@@ -1,0 +1,21 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: mbed/doc_builder:cli-builders
+        auth:
+          username: $DOCKER_USER
+          password: $DOCKER_PASS
+
+    steps:
+      - checkout
+
+      - run:
+          name: Validate and build documentation
+          command: |
+            docbuilder cloud-docs /tmp/artifacts --path ~/project/docs.json --github_token "$GITHUB_TOKEN"
+
+      - store_artifacts:
+          path: /tmp/artifacts
+          destination: docs
