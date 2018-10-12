@@ -4,7 +4,7 @@
         "slug": "mbed-os-api-doxy",
         "hidden": true,
         "type": "doxygen",
-        "source": "https://github.com/ARMmbed/mbed-os",
+        "source": "https://github.com/c1728p9/mbed-os",
         "branch": "master"
     },
     {
